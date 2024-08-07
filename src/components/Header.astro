@@ -1,0 +1,60 @@
+---
+import {Icon} from "astro-icon/components";
+import { Image } from "astro:assets";
+import LionLogo from '../resources/lion.png';
+import { inView } from "../utils/utils";
+
+let header_styling = "header-body flex flex-row justify-between mx-48 my-2 text-lg font-semibold text-black";
+---
+<header>
+  <section class={header_styling}>
+    <a href ="localhost:4321" class="flex flew-row my-2">
+      <Image src={LionLogo} alt="codelions icon" class="w-auto h-8 mr-2"/>
+      <p class="starter">codelions</p>
+    </a>
+    <section class="flex flex-row">
+      <button class="header-btn btn btn-ghost text-sm text-orange-500">home</button>
+      <button class="header-btn btn btn-ghost text-sm">contacts</button>
+      <button class="header-btn btn btn-ghost text-sm">services</button>
+      <button class="header-btn btn btn-ghost text-sm">test</button>
+    </section>
+    <section class="flex flex-row">
+      <a href ="https://www.instagram.com">
+        <Icon name="cib:instagram" class="swap-on w-auto h-7 my-3 mr-4"/>
+      </a>
+      <label class=" swap swap-rotate">
+        <input class="theme-toggle" type="checkbox"/>
+        <Icon name="fa6-regular:moon" class="swap-on w-auto h-7"/>
+        <Icon name="fa6-regular:sun" class="swap-off w-auto h-7"/>
+      </label>
+    </section>
+  </section>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const html = document.documentElement;
+    const btns = document.querySelectorAll('.header-btn');
+    const theme_toggle = document.querySelector('.theme-toggle');
+    let section = document.querySelector('.header-body');
+    let toggled = false;
+    let active_btn = btns[0];
+    btns.forEach((btn) =>{
+      btn.onclick = () => {
+        if(btn != active_btn) {
+          btn.classList.toggle('text-orange-500');
+          if (active_btn) active_btn.classList.toggle('text-orange-500');
+          active_btn = btn;
+        }
+      };
+    });
+    let toggleTheme = () => {
+      console.log("clicked");
+      toggled = !toggled;
+      section.classList.toggle('text-gray-700');
+      html.setAttribute('data-theme', toggled ? "dark" : "light");
+    }
+    theme_toggle.onclick = null;
+    theme_toggle.onclick = toggleTheme;
+  });
+</script>

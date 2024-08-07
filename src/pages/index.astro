@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
+import Main from '../components/Main.astro';
+import PricedTag from '../components/PricedTag.astro'
+---
+
+<Layout title="codelions">
+  <Header/>
+  <Main />
+  <div class="my-8 mb-8 w-full h-[80vh] bg-gray-200">
+    <section class="flex flex-col justify-center items-center">
+      <p class="mt-12 text-3xl font-extrabold drop-shadow-lg">Designed for businesses like yours</p>
+      <p class="mt-3 mb-8 text-gray-500 text-xl drop-shadow-lg">the Codelions teams focuses on providing the best services for the most optimal prices </p>
+      <div class = "flex flex-row justify-center items-center">
+        <PricedTag price="549" title= "Starter" body ="hello" href=""/>
+        <PricedTag price="1239" title= "Medium" body ="hello" href=""/>
+        <PricedTag price="3200+" title= "Pro" body ="hello" href=""/>
+      </div>
+    </section>
+  </div>
+  <div class="w-full h-[200vh] bg-white"></div>
+</Layout>

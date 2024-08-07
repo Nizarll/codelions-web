@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import LionLogo from '../resources/lion.png';
+import { inView } from "../utils/utils";
+
+import IpadSrc from '../resources/hero-ipad2.webp';
+import IphoneSrc from '../resources/hero-iphone-1.webp';
+import Iphone2Src from '../resources/hero-iphone-2.webp';
+---
+
+<main class="flex flex-col justify-center items-center h-screen">
+  <div class="relative flex justify-center items-center w-full h-full">
+    <!-- Container for images centered in the background -->
+    <div class="absolute inset-0 flex m-auto justify-center items-center z-0 h-96 w-96 rounded-full border border-8 border-white/30 bg-orange-500 bg-[radial-gradient(90%_90%_at_16.8%_18.3%,white,#f97316_37.7%)] shadow-[-20px_-60px_150px_#f97316ff,25px_40px_150px_#fde68aff]"></div>
+    <div class="parallax absolute inset-0 flex flex-row justify-center items-center z-0">
+      <Image src={IpadSrc} alt="codelions icon" class="w-[286px] h-[306px] md:w-[476px] md:h-[510px] mb-4 translate-x-[16rem] -z-10 -translate-y-12"/>
+      <Image src={IphoneSrc} alt="codelions icon" class="w-[300px] h-[265px] md:w-[500px] md:h-[442px] mb-4 translate-x-20 translate-y-16"/>
+      <Image src={Iphone2Src} alt="codelions icon" class="w-[300px] h-[265px] md:w-[500px] md:h-[442px]     -translate-x-52 -translate-y-8"/>
+    </div>
+    <!-- Centered text in the foreground -->
+    <div class="relative z-10 flex flex-col justify-center items-center text-6xl text-white font-bold text-center drop-shadow-[0_5px_4px_rgba(0,0,0,1)]">
+      <p class="">
+      codelions <p class="text-7xl bg-gradient-to-t text-transparent bg-clip-text from-red-500 to-orange-500 drop-shadow-[0_2px_15px_rgba(255,100,0,.8)] ">the best</p> software platform
+      </p>
+    </div>
+  </div>
+</main>
+
+<script>
+  function inView(element) {
+    if (!element) return false;
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top + (rect.bottom - rect.top) / 2 < window.innerHeight &&
+      rect.bottom - (rect.bottom - rect.top) / 2 > 0 &&
+      rect.left < window.innerWidth &&
+      rect.right > 0
+    );
+  }
+
+  function getInitialTransformValues(element) {
+    const style = window.getComputedStyle(element);
+    const transform = style.transform;
+
+    // Parse the transform matrix
+    const matrix = new DOMMatrix(transform);
+    return {
+      initialXTranslation: matrix.m41, // Get the X translation
+      initialYTranslation: matrix.m42  // Get the Y translation
+    };
+  }
+
+  let initialTransforms = {};
+  let lastScrollY = 0;
+  let offsets = [3, 1, 2];
+
+  function storeInitialTransforms() {
+    const parallaxDiv = document.querySelector('.parallax');
+    const children = parallaxDiv ? parallaxDiv.children : [];
+    Array.from(children).forEach((child, index) => {
+      initialTransforms[index] = getInitialTransformValues(child);
+    });
+  }
+
+  function updateParallax() {
+    const parallaxDiv = document.querySelector('.parallax');
+    const children = parallaxDiv ? parallaxDiv.children : [];
+    const scrollY = window.scrollY;
+
+    if (scrollY <= 50) {
+      // Reset transforms when scrollY is less than or equal to 50
+      Array.from(children).forEach((child, index) => {
+        const { initialXTranslation, initialYTranslation } = initialTransforms[index] || { initialXTranslation: 0, initialYTranslation: 0 };
+        child.style.transform = `translate(${initialXTranslation}px, ${initialYTranslation}px)`;
+      });
+      lastScrollY = scrollY;
+      return;
+    }
+
+    Array.from(children).forEach((child, index) => {
+      const { initialXTranslation, initialYTranslation } = initialTransforms[index] || { initialXTranslation: 0, initialYTranslation: 0 };
+      const newYTranslation = initialYTranslation - offsets[index] * scrollY * 0.2;
+      child.style.transform = `translate(${initialXTranslation}px, ${newYTranslation}px)`;
+    });
+
+    lastScrollY = scrollY;
+  }
+
+  window.addEventListener('load', () => {
+    storeInitialTransforms();
+    updateParallax();
+    window.addEventListener('scroll', updateParallax);
+  });
+</script>
