@@ -17,7 +17,7 @@ import page_2 from '../resources/page-2.png';
 <Layout title="Nyosaas">
   <Header/>
   <Main />
-  <div class="w-full h-1/2 bg-gray-200 items-center justify-center flex flex-row">
+  <div class="w-full h-1/2 items-center justify-center flex flex-row">
     <div class="flex flex-col justify-center items-center h-full">
       <p class="m-20 text-3xl font-extrabold drop-shadow-lg">About us.</p>
       <div class = "flex flex-row">
@@ -65,7 +65,7 @@ import page_2 from '../resources/page-2.png';
       </div>
     </div>
   </div>
-  <div class="w-full h-1/2 bg-gray-200 items-center justify-center flex flex-col">
+  <div class="w-full h-1/2 items-center justify-center flex flex-col">
     <div class="div class flex flex-col justify-center items-center">
       <p class="mt-20 text-3xl font-extrabold drop-shadow-lg">Our services.</p>
       <div class="services flex flex-row flex-wrap items-center justify-center py-4 pb-24 pt-24">
@@ -182,8 +182,14 @@ import page_2 from '../resources/page-2.png';
     </div>
   </div>
   <div class="py-10 mt-24 bg-white w-full flex flex-col items-center justify-center bg-gray-300">
-    <div class="py-20">
+    <div class="py-20 custom-shadow">
       <Form/>
     </div>
   </div>
 </Layout>
+
+<style>
+  .custom-shadow {
+      filter: drop-shadow(0 -10px 10px rgb(0 0 0 / 0.08)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.1));;
+    }
+</style>

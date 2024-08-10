@@ -1,16 +1,15 @@
 ---
 import {Icon} from "astro-icon/components";
 import { Image } from "astro:assets";
-import LionLogo from '../resources/nyosaas_orng.png';
+import LionLogo from '../resources/nyosaas_white.png';
 import { inView } from "../utils/utils";
 
-let header_styling = "header-body flex flex-row justify-between mx-48 my-2 text-lg font-semibold text-black";
+let header_styling = "header-body flex flex-row justify-between mx-48 my-2 text-lg font-semibold text-white hidden lg:flex";
 ---
 <header>
   <section class={header_styling}>
-    <a href ="localhost:4321" class="flex flew-row my-2">
+    <a href ="localhost:4321" class="flex flew-row my-2 flex-wrap">
       <Image src={LionLogo} alt="codelions icon" class="w-auto h-8 mr-2"/>
-      <p class="starter">nyosaas</p>
     </a>
     <section class="flex flex-row">
       <button class="header-btn btn btn-ghost text-sm text-orange-500">home</button>
@@ -22,11 +21,9 @@ let header_styling = "header-body flex flex-row justify-between mx-48 my-2 text-
       <a href ="https://www.instagram.com">
         <Icon name="cib:instagram" class="swap-on w-auto h-7 my-3 mr-4"/>
       </a>
-      <label class=" swap swap-rotate">
-        <input class="theme-toggle" type="checkbox"/>
-        <Icon name="fa6-regular:moon" class="swap-on w-auto h-7"/>
-        <Icon name="fa6-regular:sun" class="swap-off w-auto h-7"/>
-      </label>
+      <a href ="https://www.whatsapp.com">
+        <Icon name="la:whatsapp" class="swap-on w-auto h-8 my-3 mr-4"/>
+      </a>
     </section>
   </section>
 </header>
