@@ -1,7 +1,7 @@
 ---
 import {Icon} from "astro-icon/components";
 import { Image } from "astro:assets";
-import LionLogo from '../resources/lion.png';
+import LionLogo from '../resources/nyosaas_orng.png';
 import { inView } from "../utils/utils";
 
 let header_styling = "header-body flex flex-row justify-between mx-48 my-2 text-lg font-semibold text-black";
@@ -10,7 +10,7 @@ let header_styling = "header-body flex flex-row justify-between mx-48 my-2 text-
   <section class={header_styling}>
     <a href ="localhost:4321" class="flex flew-row my-2">
       <Image src={LionLogo} alt="codelions icon" class="w-auto h-8 mr-2"/>
-      <p class="starter">codelions</p>
+      <p class="starter">nyosaas</p>
     </a>
     <section class="flex flex-row">
       <button class="header-btn btn btn-ghost text-sm text-orange-500">home</button>
@@ -40,13 +40,13 @@ let header_styling = "header-body flex flex-row justify-between mx-48 my-2 text-
     let toggled = false;
     let active_btn = btns[0];
     btns.forEach((btn) =>{
-      btn.onclick = () => {
+      btn.addEventListener("click", () => {
         if(btn != active_btn) {
           btn.classList.toggle('text-orange-500');
           if (active_btn) active_btn.classList.toggle('text-orange-500');
           active_btn = btn;
         }
-      };
+      });
     });
     let toggleTheme = () => {
       console.log("clicked");
@@ -54,7 +54,6 @@ let header_styling = "header-body flex flex-row justify-between mx-48 my-2 text-
       section.classList.toggle('text-gray-700');
       html.setAttribute('data-theme', toggled ? "dark" : "light");
     }
-    theme_toggle.onclick = null;
-    theme_toggle.onclick = toggleTheme;
+    theme_toggle.addEventListener("click", toggleTheme);
   });
 </script>

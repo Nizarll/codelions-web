@@ -1,16 +1,71 @@
 ---
+import {Icon} from "astro-icon/components";
+import {Image} from "astro:assets";
+import Form from '../components/form';
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
 import Main from '../components/Main.astro';
 import PricedTag from '../components/PricedTag.astro'
 import Process from '../components/Process.astro';
+
+import example_1 from '../resources/port_example_1.png';
+import page_1 from '../resources/page-1.png';
+import page_2 from '../resources/page-2.png';
 ---
 
-<Layout title="codelions">
+<Layout title="Nyosaas">
   <Header/>
   <Main />
-  <div class="my-8 w-full h-1/2 bg-gray-200 items-center justify-center flex flex-col">
+  <div class="w-full h-1/2 bg-gray-200 items-center justify-center flex flex-row">
+    <div class="flex flex-col justify-center items-center h-full">
+      <p class="m-20 text-3xl font-extrabold drop-shadow-lg">About us.</p>
+      <div class = "flex flex-row">
+        <div class="w-1/2 flex flex-col items-start justify-center">
+          <p class="mx-20 text-xl drop-shadow-lg">
+          Welcome to nyosaas.<br/> where innovation meets craftsmanship. We are a dynamic team of developers, designers, and strategists<br/> based in Morocco, passionate about turning ideas into reality.
+          </p>
+          <div class="mt-8 mx-20 text-xl drop-shadow-lg flex flex-row">
+            <Icon name="fa6-regular:clone" class="text-orange-400 w-auto h-7"/>
+            <p class="ml-4 mr-4">At Nyosaas, we believe in the power of technology to transform businesses. Whether you're a startup looking to make a mark or an established enterprise aiming to stay ahead, we are here to help you achieve your goals.</p>
+          </div>
+          <div class="mt-8 mx-20 text-xl drop-shadow-lg flex flex-row">
+            <Icon name="fa6-regular:hand-point-right" class="text-orange-400 w-auto h-7"/>
+            <p class="ml-4 mr-4">Our expertise spans across various domains, including software as a service (SaaS) platforms, e-commerce solutions, custom websites, and more.</p>
+          </div>
+        </div>
+        <div class="w-[2px] h-[20] bg-gray-400"></div>
+        <div class="flex flex-col w-1/2">
+          <p class="ml-8 text-xl drop-shadow-lg">Our skills.</p>
+          <div class ="ml-8 mt-6 flex flex-row items-center">
+            <p class="text-lg drop-shadow-lg">front-end</p>
+            <div class="mx-5 w-[40%] h-3 bg-gray-500 rounded-lg outline outline-1 outline-gray-600 flex flex-row items-center"> <div class="w-[98%] h-3 bg-orange-400 rounded-lg"></div> </div>
+            <p class="ml-12 text-lg drop-shadow-lg">98%</p>
+          </div>
+
+          <div class ="ml-8 mt-6 flex flex-row items-center">
+            <p class="text-lg drop-shadow-lg">back-end</p>
+            <div class="mx-5 w-[40%] h-3 bg-gray-500 rounded-lg outline outline-1 outline-gray-600 flex flex-row items-center"> <div class="w-[100%] h-3 bg-orange-400 rounded-lg"></div> </div>
+            <p class="ml-12 text-lg drop-shadow-lg">100%</p>
+          </div>
+
+          <div class ="ml-8 mt-6 flex flex-row items-center">
+            <p class="text-lg drop-shadow-lg">marketing</p>
+            <div class="mx-5 w-[40%] h-3 bg-gray-500 rounded-lg outline outline-1 outline-gray-600 flex flex-row items-center"> <div class="w-[90%] h-3 bg-orange-400 rounded-lg"></div> </div>
+            <p class="ml-12 text-lg drop-shadow-lg">98%</p>
+          </div>
+
+          <div class ="ml-8 mt-6 flex flex-row items-center">
+            <p class="text-lg drop-shadow-lg">adaptability</p>
+            <div class="mx-5 w-[40%] h-3 bg-gray-500 rounded-lg outline outline-1 outline-gray-600 flex flex-row items-center"> <div class="w-[90%] h-3 bg-orange-400 rounded-lg"></div> </div>
+            <p class="ml-12 text-lg drop-shadow-lg">92%</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full h-1/2 bg-gray-200 items-center justify-center flex flex-col">
     <div class="div class flex flex-col justify-center items-center">
       <p class="mt-20 text-3xl font-extrabold drop-shadow-lg">Our services.</p>
       <div class="services flex flex-row flex-wrap items-center justify-center py-4 pb-24 pt-24">
@@ -20,20 +75,115 @@ import Process from '../components/Process.astro';
         <Card title="Optimized backend systems" body="Experienced in delivering excellent customer service through effective communication, problem-solving, and ensuring customer satisfaction." href=""/>
       </div>
     </div>
-    <section class="flex flex-col justify-center items-center">
-      <p class="mt-12 text-3xl font-extrabold drop-shadow-lg">Designed for businesses like yours</p>
-      <p class="mt-3 mb-8 text-gray-500 text-xl drop-shadow-lg">the Codelions teams focuses on providing the best services for the most optimal prices </p>
-      <div class = "mb-12 w-full flex flex-wrap flex-row justify-center items-center">
-        <PricedTag price="549" title= "Starter" body ="hello" href=""/>
-        <PricedTag price="1239" title= "Medium" body ="hello" href=""/>
-        <PricedTag price="3200+" title= "Pro" body ="hello" href=""/>
-      </div>
-    </section>
   </div>
+  <section class="flex flex-col justify-center items-center">
+    <p class="mt-12 text-3xl font-extrabold drop-shadow-lg">Designed for businesses like yours</p>
+    <p class="mt-3 mb-8 text-gray-500 text-xl drop-shadow-lg">the Codelions teams focuses on providing the best services for the most optimal prices </p>
+    <div class = "mb-12 w-full flex flex-wrap flex-row justify-center items-center">
+
+      <section class="sm:my-4 drop-shadow-lg bg-white rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center">
+        <p class= "text-2xl font-bold text-gray-700">Starter</p>
+        <p class="my-4 text-gray-500">more fit for smaller scale applications</p>
+        <ul class="w-full flex flex-col">
+          <li class ="my-1 flex flex-row text-md">
+            <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+            <p>fast delivery</p>
+          </li>
+          <li class ="my-1 flex flex-row text-md">
+            <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+            <p>high quality service</p>
+          </li>
+          <li class ="my-1 flex flex-row text-md">
+            <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+            <p>small and compact application</p>
+          </li>
+        </ul>
+        <button class="my-28 px-32 bg-orange-500 py-2 rounded-lg text-lg">Get Started</button>
+      </section>
+
+      <section class="sm:my-4 drop-shadow-lg bg-white rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center">
+        <p class= "text-2xl font-bold text-gray-700">Medium</p>
+        <p class="my-4 text-gray-500">versatile, includes both backend and frontend</p>
+        <div class="flex flex-col justify-between h-full">
+          <div>
+            <ul class="w-full flex flex-col">
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>fast delivery</p>
+              </li>
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>high quality service</p>
+              </li>
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>small and compact application</p>
+              </li>
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>fast feedback and consumer service</p>
+              </li>
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>advanced and secure backend systems</p>
+              </li>
+            </ul>
+          </div>
+          <button class="mb-3 px-32 bg-orange-500 py-2 rounded-lg text-lg">Get Started</button>
+        </div>
+      </section>
+
+      <section class="sm:my-4 drop-shadow-lg bg-white rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center">
+        <p class= "text-2xl font-bold text-gray-700">Advanced</p>
+        <p class="my-4 text-gray-500">advanced formula for higher scale applications</p>
+        <div class="flex flex-col justify-between h-full">
+          <div>
+            <ul class="w-full flex flex-col">
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>fast delivery</p>
+              </li>
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>high quality service</p>
+              </li>
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>small and compact application</p>
+              </li>
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>fast feedback and consumer service</p>
+              </li>
+              <li class ="my-1 flex flex-row text-md">
+                <Icon name="mingcute:check-2-fill" class="swap-on w-auto h-4 my-1 mr-3 text-green-500"/>
+                <p>advanced and secure backend systems</p>
+              </li>
+            </ul>
+          </div>
+          <button class="mb-3 px-32 bg-orange-500 py-2 rounded-lg text-lg">Get Started</button>
+        </div>
+      </section>
+    </div>
+  </section>
   <div class="py-10 my-10 bg-white w-full flex flex-col items-center justify-center">
     <p class="text-3xl font-extrabold drop-shadow-lg">How to start ?</p>
     <div class="py-20">
       <Process/>
+    </div>
+  </div>
+  <div class="py-10 my-10 bg-white w-full flex flex-col items-center justify-center">
+    <p class="text-3xl font-extrabold drop-shadow-lg">Examples</p>
+    <div class="my-20 mx-20 flex flew-row flex-wrap justify-center">
+      <Image src={example_1} alt="portfolio example 1" class="w-1/4 h-auto mx-8 drop-shadow-lg"/>
+      <Image src={page_1} alt="portfolio example 1" class="w-1/4 h-auto mx-8 drop-shadow-lg"/>
+      <Image src={page_2} alt="portfolio example 1" class="w-1/4 h-auto mx-8 drop-shadow-lg"/>
+      </ul>
+    </div>
+  </div>
+  <div class="py-10 mt-24 bg-white w-full flex flex-col items-center justify-center bg-gray-300">
+    <div class="py-20">
+      <Form/>
     </div>
   </div>
 </Layout>
