@@ -62,7 +62,7 @@ At Nyosaas, we believe in the power of technology to transform businesses. Wheth
           </div>
         </div>
             </div>
-            <Image src={stock_customer} class="mr-40 mb-8 rounded-2xl outline outline-3 outline-orange-500 outline-offset-4 hover:scale-110 transition transition-all hover:outline-white duration-300 hidden lg:flex" alt="happy customer" />
+            <Image src={stock_customer} class="mr-40 mb-8 rounded-2xl outline outline-3 outline-orange-500 outline-offset-4 hover:scale-110 transition transition-all hover:outline-white duration-300" alt="happy customer" />
             </div>
         </div>
       </div>
@@ -84,7 +84,7 @@ At Nyosaas, we believe in the power of technology to transform businesses. Wheth
     <p class="mt-3 mb-8 text-gray-500 text-xl drop-shadow-lg">the Nyosaas teams focuses on providing the best services for the most optimal prices </p>
     <div class = "mb-12 w-full flex flex-wrap flex-row justify-center items-center">
 
-      <section class="sm:my-4 drop-shadow-lg rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center text-white bg-[#2b2b2f] outline outline-2 outline-[#383841]">
+      <section class="sm:my-4 drop-shadow-lg bg-white rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center text-white bg-[#2b2b2f] outline outline-2 outline-[#383841]">
         <p class= "text-2xl font-bold text-white">Landing page</p>
         <p class="my-4 text-gray-500">more fit for smaller scale landing page webapps</p>
         <div class="flex flex-col justify-between h-full">
@@ -112,7 +112,7 @@ At Nyosaas, we believe in the power of technology to transform businesses. Wheth
         </div>
       </section>
 
-      <section class="sm:my-4 drop-shadow-lg rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center text-white bg-[#2b2b2f] outline outline-2 outline-[#383841]">
+      <section class="sm:my-4 drop-shadow-lg bg-white rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center text-white bg-[#2b2b2f] outline outline-2 outline-[#383841]">
         <p class= "text-2xl font-bold text-white">Semi Fullstack page</p>
         <p class="my-4 text-gray-500">versatile, includes both backend and frontend</p>
         <div class="flex flex-col justify-between h-full">
@@ -144,7 +144,7 @@ At Nyosaas, we believe in the power of technology to transform businesses. Wheth
         </div>
       </section>
 
-      <section class="sm:my-4 drop-shadow-lg rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center text-white bg-[#2b2b2f] outline outline-2 outline-[#383841]">
+      <section class="sm:my-4 drop-shadow-lg bg-white rounded-lg px-4 py-4 mx-4 w-96 h-96  flex flex-col items-center text-white bg-[#2b2b2f] outline outline-2 outline-[#383841]">
         <p class= "text-2xl font-bold text-white">Semi Fullstack page</p>
         <p class="my-4 text-gray-500">advanced application containing heavy backend</p>
         <div class="flex flex-col justify-between h-full">
@@ -186,54 +186,22 @@ At Nyosaas, we believe in the power of technology to transform businesses. Wheth
       </ul>
     </div>
   </div>
-  <div class="py-10 mt-24 w-full flex flex-col items-center justify-center">
-    <p class="text-white text-3xl font-extrabold drop-shadow-lg text-white">Contact us</p>
-    <div class="py-20 custom-shadow mx-20">
+  <div class="py-10 mt-24 w-full flex flex-col items-center justify-center drop-shadow-[0px_4px_8px_rgba(255,255,255,.4)]">
+    <div class="py-20 custom-shadow">
       <div class = "flex flex-col">
       <div class = "flex flex-row">
-      <div class ="mx-20 flex flex-row w-full">
-        <div class = "flex flex-row justify-between w-full">
-          <a href ="https://www.instagram.com" class = "flex flex-col items-center justify-center">
-            <Icon name="cib:instagram" class=" text-orange-500 w-auto h-12"/>
-            <p class="font-semibold mt-2 mb-8 text-2xl text-white">Instagram</p>
-          </a>
-          <a href ="https://www.instagram.com" class = "flex flex-col items-center justify-center">
-            <Icon name="uil:phone" class=" text-orange-500 w-auto h-12"/>
-            <p class="font-semibold mt-2 mb-8 text-2xl text-white">Phone</p>
-          </a>
-          <a href ="https://www.instagram.com" class = "flex flex-col items-center justify-center">
-            <Icon name="la:whatsapp" class=" text-orange-500 w-auto h-12"/>
-            <p class="font-semibold mt-2 mb-8 text-2xl text-white">Whatsapp</p>
+
+      <div class ="mx-20 flex flex-row">
+        <div class = "flex flex">
+          <a href ="https://www.instagram.com" class = "flex flex-col">
+            <Icon name="cib:instagram" class=" text-orange-500 swap-on w-auto h-7 my-3 mr-4"/>
+            <p>Instagram</p>
           </a>
         </div>
       </div>
+
       </div>
-      <div class ="flex flex-col mt-8 w-full items-center lg:items-start lg:flex-row lg:mb-0">
-      <div class="w-[100%] lg:w-[80%] mb-8 lg:mb-0 bg-[#2b2b2f] outline outline-2 outline-[#383841] mx-8 rounded-xl flex flex-col">
-        <p class="mx-8 mt-8 text-lg font-bold text-white">Would you like to get in touch with us directly?</p>
-        <p class="mx-8 my-4 text-gray-300">At Nyosaas, we provide all the essential communication tools to help you adopt the best strategy, enhance your digital presence, elevate your brand image, and boost your sales.
-Whether you're a business, a retailer, or a freelancer looking to market and sell your products or services to increase your revenue, you're in the right place. Feel free to contact us directly.
-We are here to fully support you throughout the entire process, offering tailored solutions that meet your specific needs and budget.</p>
-      <div class = "flex flex-row my-4 justify-between">
-        <div class= "flex flex-col flex-1">
-            <Icon name="lets-icons:check-fill" class=" text-green-500 w-auto h-12 items-center justify-center"/>
-            <p class="mx-8 mt-2 text-lg font-bold text-white">1-Select A Plan.</p>
-            <p class="mx-8 my-4 text-gray-300">Start by selecting a plan from the options available on our website. This is the first step towards finding the perfect solution for your needs.</p>
-        </div>
-        <div class= "flex flex-col flex-1">
-            <Icon name="lets-icons:check-fill" class=" text-green-500 w-auto h-12 items-center justify-center"/>
-            <p class="mx-8 mt-2 text-lg font-bold text-white">2-Secure Your Project.</p>
-            <p class="mx-8 my-4 text-gray-300">In the second step, you’ll secure your project by paying a 20% fee. This allows us to begin working on bringing your vision to life.</p>
-        </div>
-        <div class= "flex flex-col flex-1">
-            <Icon name="lets-icons:check-fill" class=" text-green-500 w-auto h-12 items-center justify-center"/>
-            <p class="mx-8 mt-2 text-lg font-bold text-white">3-Collaborate and Refine.</p>
-            <p class="mx-8 my-4 text-gray-300">In the third step, we develop your project and stay in touch to gather your feedback. After refining the work to meet your expectations, you’ll make the final payment to receive the completed product.</p>
-        </div>
-      </div>
-      </div>
-      <Form/>
-      </div>
+          <Form/>
       </div>
     </div>
   </div>
